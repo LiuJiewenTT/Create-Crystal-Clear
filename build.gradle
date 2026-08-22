@@ -156,3 +156,23 @@ idea {
         downloadJavadoc = true
     }
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = mod_artifact_id
+            version = mod_version
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = 'github'
+            url = uri("https://maven.pkg.github.com/${System.env.GITHUB_REPOSITORY}")
+            credentials {
+                username = System.env.GITHUB_ACTOR
+                password = System.env.GITHUB_TOKEN
+            }
+        }
+    }
+}
