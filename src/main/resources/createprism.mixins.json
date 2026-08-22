@@ -1,7 +1,7 @@
 {
   "required": true,
   "priority": 1000,
-  "package": "com.adonis.createprism.mixin",
+  "package": "com.adonis.prism.mixin",
   "compatibilityLevel": "JAVA_21",
   "refmap": "createprism.refmap.json",
   "mixins": [
