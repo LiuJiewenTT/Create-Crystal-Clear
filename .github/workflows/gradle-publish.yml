@@ -35,10 +35,11 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
-    # the publishing section of your build.gradle
+    # GITHUB_TOKEN, GITHUB_ACTOR, GITHUB_REPOSITORY are automatically provided by GitHub Actions
+    # GITHUB_TOKEN has write:packages permission via the "permissions" block above
     - name: Publish to GitHub Packages
       run: ./gradlew publish
       env:
-        USERNAME: ${{ github.actor }}
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
