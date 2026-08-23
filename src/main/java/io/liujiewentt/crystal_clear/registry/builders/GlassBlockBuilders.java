@@ -8,6 +8,7 @@ import io.liujiewentt.crystal_clear.util.CasingHolder;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.AllTags;
+import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.content.decoration.MetalScaffoldingBlock;
 import com.simibubi.create.content.decoration.MetalScaffoldingBlockItem;
 import com.simibubi.create.content.decoration.MetalScaffoldingCTBehaviour;
@@ -104,6 +105,7 @@ public class GlassBlockBuilders {
                 .initialProperties(() -> Blocks.GLASS)
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .properties(GlassBlockBuilders::glassProperties)
+                .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> 0))
                 // Removed onRegister for EncasingRegistry - will be done in FMLCommonSetupEvent
                 .loot((p, lb) -> p.dropOther(lb, AllBlocks.SHAFT.get()))
                 .addLayer(() -> RenderType::cutout)
@@ -137,6 +139,7 @@ public class GlassBlockBuilders {
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .properties(p -> p.lightLevel(s -> 15))
                 .properties(GlassBlockBuilders::glassProperties)
+                .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> 0))
                 .loot((p, lb) -> p.dropOther(lb, AllBlocks.SHAFT.get()))
                 .addLayer(() -> RenderType::translucent)
                 .onRegister(connectedTextures(() -> new IlluminationEncasedCTBehaviour(ctEntry)))
@@ -170,6 +173,7 @@ public class GlassBlockBuilders {
                 .initialProperties(() -> Blocks.GLASS)
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .properties(GlassBlockBuilders::glassProperties)
+                .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> 0))
                 // Removed onRegister for EncasingRegistry - will be done in FMLCommonSetupEvent
                 .loot((p, lb) -> {
                     if (large) {
@@ -227,6 +231,7 @@ public class GlassBlockBuilders {
                 .properties(BlockBehaviour.Properties::noOcclusion)
                 .properties(p -> p.lightLevel(s -> 15))
                 .properties(GlassBlockBuilders::glassProperties)
+                .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> 0))
                 .loot((p, lb) -> {
                     if (large) {
                         p.dropOther(lb, AllBlocks.LARGE_COGWHEEL.get());
