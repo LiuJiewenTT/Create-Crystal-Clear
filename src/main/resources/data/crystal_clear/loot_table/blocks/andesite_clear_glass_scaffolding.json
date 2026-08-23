@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "createprism:andesite_clear_glass_scaffolding"
+          "name": "crystal_clear:andesite_clear_glass_scaffolding"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "createprism:blocks/andesite_clear_glass_scaffolding"
+  "random_sequence": "crystal_clear:blocks/andesite_clear_glass_scaffolding"
 }

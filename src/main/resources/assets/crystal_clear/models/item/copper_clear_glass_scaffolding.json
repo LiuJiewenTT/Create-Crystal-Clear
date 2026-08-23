@@ -1,10 +1,10 @@
 {
-  "parent": "createprism:block/scaffold/block",
+  "parent": "crystal_clear:block/scaffold/block",
   "textures": {
-    "casing": "createprism:block/copper_clear_glass_casing",
+    "casing": "crystal_clear:block/copper_clear_glass_casing",
     "inside": "create:block/scaffold/copper_scaffold_inside",
     "particle": "create:block/scaffold/copper_scaffold",
     "side": "create:block/scaffold/copper_scaffold",
-    "top": "createprism:block/copper_clear_glass_casing"
+    "top": "crystal_clear:block/copper_clear_glass_casing"
   }
 }

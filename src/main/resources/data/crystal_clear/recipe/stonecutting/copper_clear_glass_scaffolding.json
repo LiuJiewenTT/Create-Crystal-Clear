@@ -1,10 +1,10 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "createprism:copper_glass_scaffolding"
+    "item": "crystal_clear:copper_glass_scaffolding"
   },
   "result": {
-    "id": "createprism:copper_clear_glass_scaffolding",
+    "id": "crystal_clear:copper_clear_glass_scaffolding",
     "count": 1
   }
 }

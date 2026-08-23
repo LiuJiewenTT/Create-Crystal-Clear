@@ -1,4 +1,4 @@
-package com.adonis.prism.mixin;
+package io.liujiewentt.crystal_clear.mixin;
 
 import com.simibubi.create.content.kinetics.mechanicalArm.AllArmInteractionPointTypes;
 import com.simibubi.create.content.kinetics.mechanicalArm.ArmInteractionPointType;

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "createprism:andesite_illumination_casing"
+          "name": "crystal_clear:andesite_illumination_casing"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "createprism:blocks/andesite_illumination_casing"
+  "random_sequence": "crystal_clear:blocks/andesite_illumination_casing"
 }

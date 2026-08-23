@@ -1,10 +1,10 @@
 {
-  "parent": "createprism:block/encased_cogwheel/block_top_bottom",
+  "parent": "crystal_clear:block/encased_cogwheel/block_top_bottom",
   "textures": {
     "backing": "minecraft:block/stripped_spruce_log_top",
-    "casing": "createprism:block/andesite_glass_casing",
+    "casing": "crystal_clear:block/andesite_glass_casing",
     "opening": "create:block/gearbox",
-    "particle": "createprism:block/andesite_glass_casing",
-    "siding": "createprism:block/encased_cogwheels/andesite_encased_cogwheel_side"
+    "particle": "crystal_clear:block/andesite_glass_casing",
+    "siding": "crystal_clear:block/encased_cogwheels/andesite_encased_cogwheel_side"
   }
 }

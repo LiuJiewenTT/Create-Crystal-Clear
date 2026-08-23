@@ -1,6 +1,6 @@
-package com.adonis.prism;
+package io.liujiewentt.crystal_clear;
 
-import com.adonis.prism.registry.*;
+import io.liujiewentt.crystal_clear.registry.*;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.decoration.encasing.EncasingRegistry;
 import com.simibubi.create.foundation.item.ItemDescription;
@@ -15,10 +15,10 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.util.Random;
 
-@Mod(CreatePrism.MOD_ID)
-public class CreatePrism {
-    public static final String MOD_ID = "createprism";
-    public static final String NAME = "Create Prism";
+@Mod(CrystalClear.MOD_ID)
+public class CrystalClear {
+    public static final String MOD_ID = "crystal_clear";
+    public static final String NAME = "Create Crystal Clear";
     public static final Random RANDOM = new Random();
 
     public static final CPRegistrate REGISTRATE = CPRegistrate.create(MOD_ID)
@@ -27,7 +27,7 @@ public class CreatePrism {
                             .andThen(TooltipModifier.mapNull(KineticStats.create(item)))
             );
 
-    public CreatePrism(IEventBus modEventBus, ModContainer modContainer) {
+    public CrystalClear(IEventBus modEventBus, ModContainer modContainer) {
         // Register Registrate
         REGISTRATE.registerEventListeners(modEventBus);
         CPSpriteShifts.init();

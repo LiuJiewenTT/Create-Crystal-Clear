@@ -1,4 +1,4 @@
-package com.adonis.prism.block.illumination;
+package io.liujiewentt.crystal_clear.block.illumination;
 
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import net.minecraft.core.BlockPos;

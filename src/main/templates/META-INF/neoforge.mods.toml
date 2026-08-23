@@ -10,7 +10,6 @@ license="${mod_license}"
     description='''${mod_description}'''
 [[mixins]]
     config="${mod_id}.mixins.json"
-    file="META-INF/accesstransformer.cfg"
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"

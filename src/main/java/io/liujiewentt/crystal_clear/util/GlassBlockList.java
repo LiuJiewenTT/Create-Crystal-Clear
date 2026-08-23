@@ -1,4 +1,4 @@
-package com.adonis.prism.util;
+package io.liujiewentt.crystal_clear.util;
 
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.Block;

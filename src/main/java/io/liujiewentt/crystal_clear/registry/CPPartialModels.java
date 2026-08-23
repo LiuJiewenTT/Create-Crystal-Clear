@@ -1,4 +1,4 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
 public class CPPartialModels {
     

@@ -1,9 +1,9 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
-import com.adonis.prism.block.glass.*;
-import com.adonis.prism.util.CasingTypes;
-import com.adonis.prism.util.GlassBlockList;
-import com.adonis.prism.block.illumination.*;
+import io.liujiewentt.crystal_clear.block.glass.*;
+import io.liujiewentt.crystal_clear.util.CasingTypes;
+import io.liujiewentt.crystal_clear.util.GlassBlockList;
+import io.liujiewentt.crystal_clear.block.illumination.*;
 import com.simibubi.create.content.decoration.MetalScaffoldingBlock;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.foundation.data.TagGen;
@@ -13,8 +13,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 
-import static com.adonis.prism.CreatePrism.REGISTRATE;
-import static com.adonis.prism.registry.builders.GlassBlockBuilders.*;
+import static io.liujiewentt.crystal_clear.CrystalClear.REGISTRATE;
+import static io.liujiewentt.crystal_clear.registry.builders.GlassBlockBuilders.*;
 
 public class CPBlocks {
 

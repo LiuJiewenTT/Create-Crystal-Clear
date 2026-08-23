@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "createprism:block/brass_glass_casing"
+    "all": "crystal_clear:block/brass_glass_casing"
   }
 }

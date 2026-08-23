@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "createprism:block/train_glass_casing"
+      "model": "crystal_clear:block/train_glass_casing"
     }
   }
 }

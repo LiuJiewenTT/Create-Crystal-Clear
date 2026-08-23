@@ -1,10 +1,10 @@
 {
   "variants": {
     "bottom=false": {
-      "model": "createprism:block/copper_clear_glass_scaffolding"
+      "model": "crystal_clear:block/copper_clear_glass_scaffolding"
     },
     "bottom=true": {
-      "model": "createprism:block/copper_clear_glass_scaffolding_horizontal"
+      "model": "crystal_clear:block/copper_clear_glass_scaffolding_horizontal"
     }
   }
 }

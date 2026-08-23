@@ -1,4 +1,4 @@
-package com.adonis.prism.util;
+package io.liujiewentt.crystal_clear.util;
 
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;

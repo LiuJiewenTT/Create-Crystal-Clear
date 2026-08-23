@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "createprism:block/brass_glass_casing"
+      "model": "crystal_clear:block/brass_glass_casing"
     }
   }
 }

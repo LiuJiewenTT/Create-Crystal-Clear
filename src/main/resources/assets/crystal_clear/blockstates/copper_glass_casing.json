@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "createprism:block/copper_glass_casing"
+      "model": "crystal_clear:block/copper_glass_casing"
     }
   }
 }

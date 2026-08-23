@@ -1,9 +1,9 @@
 {
-  "parent": "createprism:block/encased_cogwheel/item",
+  "parent": "crystal_clear:block/encased_cogwheel/item",
   "textures": {
-    "backing": "createprism:block/train_backing",
-    "casing": "createprism:block/train_glass_casing",
-    "opening": "createprism:block/train_gearbox",
-    "siding": "createprism:block/encased_cogwheels/train_encased_cogwheel_side"
+    "backing": "crystal_clear:block/train_backing",
+    "casing": "crystal_clear:block/train_glass_casing",
+    "opening": "crystal_clear:block/train_gearbox",
+    "siding": "crystal_clear:block/encased_cogwheels/train_encased_cogwheel_side"
   }
 }

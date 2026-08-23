@@ -1,21 +1,21 @@
 {
   "values": [
-    "createprism:andesite_glass_encased_shaft",
-    "createprism:brass_glass_encased_shaft",
-    "createprism:train_glass_encased_shaft",
-    "createprism:andesite_clear_glass_encased_shaft",
-    "createprism:brass_clear_glass_encased_shaft",
-    "createprism:train_clear_glass_encased_shaft",
-    "createprism:andesite_glass_scaffolding",
-    "createprism:brass_glass_scaffolding",
-    "createprism:copper_glass_scaffolding",
-    "createprism:andesite_clear_glass_scaffolding",
-    "createprism:brass_clear_glass_scaffolding",
-    "createprism:copper_clear_glass_scaffolding",
-    "createprism:andesite_illumination_casing",
-    "createprism:brass_illumination_casing",
-    "createprism:copper_illumination_casing",
-    "createprism:train_illumination_casing"
+    "crystal_clear:andesite_glass_encased_shaft",
+    "crystal_clear:brass_glass_encased_shaft",
+    "crystal_clear:train_glass_encased_shaft",
+    "crystal_clear:andesite_clear_glass_encased_shaft",
+    "crystal_clear:brass_clear_glass_encased_shaft",
+    "crystal_clear:train_clear_glass_encased_shaft",
+    "crystal_clear:andesite_glass_scaffolding",
+    "crystal_clear:brass_glass_scaffolding",
+    "crystal_clear:copper_glass_scaffolding",
+    "crystal_clear:andesite_clear_glass_scaffolding",
+    "crystal_clear:brass_clear_glass_scaffolding",
+    "crystal_clear:copper_clear_glass_scaffolding",
+    "crystal_clear:andesite_illumination_casing",
+    "crystal_clear:brass_illumination_casing",
+    "crystal_clear:copper_illumination_casing",
+    "crystal_clear:train_illumination_casing"
   ]
 }
 

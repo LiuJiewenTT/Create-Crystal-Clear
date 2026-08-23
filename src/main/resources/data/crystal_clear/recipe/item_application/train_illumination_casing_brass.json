@@ -2,7 +2,7 @@
   "type": "create:item_application",
   "ingredients": [
     {
-      "item": "createprism:brass_illumination_casing"
+      "item": "crystal_clear:brass_illumination_casing"
     },
     {
       "tag": "c:plates/obsidian"
@@ -10,7 +10,7 @@
   ],
   "results": [
     {
-      "id": "createprism:train_illumination_casing"
+      "id": "crystal_clear:train_illumination_casing"
     }
   ]
 }

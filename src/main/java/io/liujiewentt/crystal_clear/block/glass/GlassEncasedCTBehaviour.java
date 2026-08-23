@@ -1,4 +1,4 @@
-package com.adonis.prism.block.glass;
+package io.liujiewentt.crystal_clear.block.glass;
 
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
 import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogwheelBlock;

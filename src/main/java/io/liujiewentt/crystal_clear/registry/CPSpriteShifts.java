@@ -1,6 +1,6 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
-import com.adonis.prism.CreatePrism;
+import io.liujiewentt.crystal_clear.CrystalClear;
 import com.simibubi.create.foundation.block.connected.AllCTTypes;
 import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTSpriteShifter;
@@ -82,8 +82,8 @@ public class CPSpriteShifts {
     private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
         return CTSpriteShifter.getCT(
                 type,
-                CreatePrism.asResource("block/" + blockTextureName),
-                CreatePrism.asResource("block/" + connectedTextureName + "_connected")
+                CrystalClear.asResource("block/" + blockTextureName),
+                CrystalClear.asResource("block/" + connectedTextureName + "_connected")
         );
     }
 }

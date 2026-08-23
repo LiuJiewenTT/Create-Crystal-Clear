@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "createprism:block/train_illumination_casing"
+    "all": "crystal_clear:block/train_illumination_casing"
   }
 }

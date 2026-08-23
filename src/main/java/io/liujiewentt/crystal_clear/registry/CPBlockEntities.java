@@ -1,4 +1,4 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
 import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
@@ -10,7 +10,7 @@ import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogVisua
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import dev.engine_room.flywheel.lib.model.Models;
 
-import static com.adonis.prism.CreatePrism.REGISTRATE;
+import static io.liujiewentt.crystal_clear.CrystalClear.REGISTRATE;
 
 public class CPBlockEntities {
 

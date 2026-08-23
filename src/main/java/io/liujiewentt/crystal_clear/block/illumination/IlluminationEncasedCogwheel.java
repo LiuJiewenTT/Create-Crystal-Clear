@@ -1,7 +1,7 @@
-package com.adonis.prism.block.illumination;
+package io.liujiewentt.crystal_clear.block.illumination;
 
-import com.adonis.prism.block.glass.GlassEncasedCogwheel;
-import com.adonis.prism.registry.CPBlockEntities;
+import io.liujiewentt.crystal_clear.block.glass.GlassEncasedCogwheel;
+import io.liujiewentt.crystal_clear.registry.CPBlockEntities;
 import com.simibubi.create.content.kinetics.simpleRelays.SimpleKineticBlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;

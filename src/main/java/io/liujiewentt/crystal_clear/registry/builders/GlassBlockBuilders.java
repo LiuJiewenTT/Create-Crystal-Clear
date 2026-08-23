@@ -1,10 +1,10 @@
-package com.adonis.prism.registry.builders;
+package io.liujiewentt.crystal_clear.registry.builders;
 
-import com.adonis.prism.CreatePrism;
-import com.adonis.prism.block.glass.*;
-import com.adonis.prism.block.illumination.*;
-import com.adonis.prism.registry.CPSpriteShifts;
-import com.adonis.prism.util.CasingHolder;
+import io.liujiewentt.crystal_clear.CrystalClear;
+import io.liujiewentt.crystal_clear.block.glass.*;
+import io.liujiewentt.crystal_clear.block.illumination.*;
+import io.liujiewentt.crystal_clear.registry.CPSpriteShifts;
+import io.liujiewentt.crystal_clear.util.CasingHolder;
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllSpriteShifts;
 import com.simibubi.create.AllTags;
@@ -59,7 +59,7 @@ public class GlassBlockBuilders {
                                 .requires(holder.casing().get())
                                 .requires(AllPaletteBlocks.FRAMED_GLASS.get())
                                 .unlockedBy("has_casing", RegistrateRecipeProvider.has(AllTags.AllItemTags.CASING.tag))
-                                .save(p, CreatePrism.asResource("crafting/glass_casing/" + c.getName())))
+                                .save(p, CrystalClear.asResource("crafting/glass_casing/" + c.getName())))
                 .item()
                 .tag(AllTags.AllItemTags.CASING.tag)
                 .build()
@@ -86,7 +86,7 @@ public class GlassBlockBuilders {
                                 .requires(holder.casing().get())
                                 .requires(Items.GLOWSTONE_DUST, 4)
                                 .unlockedBy("has_casing", RegistrateRecipeProvider.has(AllTags.AllItemTags.CASING.tag))
-                                .save(p, CreatePrism.asResource("crafting/illumination_casing/" + c.getName())))
+                                .save(p, CrystalClear.asResource("crafting/illumination_casing/" + c.getName())))
                 .item()
                 .tag(AllTags.AllItemTags.CASING.tag)
                 .build()
@@ -113,13 +113,13 @@ public class GlassBlockBuilders {
                 .transform(pickaxeOnly())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, state -> prov.models()
-                                .withExistingParent(ctx.getName(), CreatePrism.asResource("block/glass_encased_shaft/block"))
-                                .texture("casing", CreatePrism.asResource("block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing"))
+                                .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/block"))
+                                .texture("casing", CrystalClear.asResource("block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing"))
                                 .texture("opening", getOpening(casing)), true))
                 .item()
                 .model((ctx, prov) -> prov
-                        .withExistingParent(ctx.getName(), CreatePrism.asResource("block/glass_encased_shaft/block"))
-                        .texture("casing", CreatePrism.asResource("block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing"))
+                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/block"))
+                        .texture("casing", CrystalClear.asResource("block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing"))
                         .texture("opening", getOpening(casing)))
                 .build()
                 .register();
@@ -146,13 +146,13 @@ public class GlassBlockBuilders {
                 .transform(pickaxeOnly())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, state -> prov.models()
-                                .withExistingParent(ctx.getName(), CreatePrism.asResource("block/illumination_encased_shaft/block"))
-                                .texture("casing", CreatePrism.asResource("block/" + casing + "_illumination_casing"))
+                                .withExistingParent(ctx.getName(), CrystalClear.asResource("block/illumination_encased_shaft/block"))
+                                .texture("casing", CrystalClear.asResource("block/" + casing + "_illumination_casing"))
                                 .texture("opening", getOpening(casing)), true))
                 .item()
                 .model((ctx, prov) -> prov
-                        .withExistingParent(ctx.getName(), CreatePrism.asResource("block/illumination_encased_shaft/block"))
-                        .texture("casing", CreatePrism.asResource("block/" + casing + "_illumination_casing"))
+                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/illumination_encased_shaft/block"))
+                        .texture("casing", CrystalClear.asResource("block/" + casing + "_illumination_casing"))
                         .texture("opening", getOpening(casing)))
                 .build()
                 .register();
@@ -194,9 +194,9 @@ public class GlassBlockBuilders {
                             String modelName = ctx.getName() + suffix;
                             String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
                             return prov.models()
-                                    .withExistingParent(modelName, CreatePrism.asResource("block/" + blockFolder + "/block" + suffix))
-                                    .texture("particle", CreatePrism.asResource("block/" + name + "_glass_casing"))
-                                    .texture("casing", CreatePrism.asResource("block/" + name + "_glass_casing"))
+                                    .withExistingParent(modelName, CrystalClear.asResource("block/" + blockFolder + "/block" + suffix))
+                                    .texture("particle", CrystalClear.asResource("block/" + name + "_glass_casing"))
+                                    .texture("casing", CrystalClear.asResource("block/" + name + "_glass_casing"))
                                     .texture("backing", getBacking(casingType))
                                     .texture("opening", getOpening(casingType))
                                     .texture("siding", getSiding(casingType, large));
@@ -204,8 +204,8 @@ public class GlassBlockBuilders {
                 .item()
                 .model((ctx, prov) -> {
                     String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
-                    prov.withExistingParent(ctx.getName(), CreatePrism.asResource("block/" + blockFolder + "/item"))
-                            .texture("casing", CreatePrism.asResource("block/" + name + "_glass_casing"))
+                    prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
+                            .texture("casing", CrystalClear.asResource("block/" + name + "_glass_casing"))
                             .texture("backing", getBacking(casingType))
                             .texture("opening", getOpening(casingType))
                             .texture("siding", getSiding(casingType, large));
@@ -251,9 +251,9 @@ public class GlassBlockBuilders {
                             String modelName = ctx.getName() + suffix;
                             String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
                             return prov.models()
-                                    .withExistingParent(modelName, CreatePrism.asResource("block/" + blockFolder + "/block" + suffix))
-                                    .texture("particle", CreatePrism.asResource("block/" + casingType + "_illumination_casing"))
-                                    .texture("casing", CreatePrism.asResource("block/" + casingType + "_illumination_casing"))
+                                    .withExistingParent(modelName, CrystalClear.asResource("block/" + blockFolder + "/block" + suffix))
+                                    .texture("particle", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
+                                    .texture("casing", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
                                     .texture("backing", getBacking(casingType))
                                     .texture("opening", getOpening(casingType))
                                     .texture("siding", getIlluminationSiding(casingType, large));
@@ -261,8 +261,8 @@ public class GlassBlockBuilders {
                 .item()
                 .model((ctx, prov) -> {
                     String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
-                    prov.withExistingParent(ctx.getName(), CreatePrism.asResource("block/" + blockFolder + "/item"))
-                            .texture("casing", CreatePrism.asResource("block/" + casingType + "_illumination_casing"))
+                    prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
+                            .texture("casing", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
                             .texture("backing", getBacking(casingType))
                             .texture("opening", getOpening(casingType))
                             .texture("siding", getIlluminationSiding(casingType, large));
@@ -293,11 +293,11 @@ public class GlassBlockBuilders {
                             return ConfiguredModel.builder()
                                     .modelFile(p.models()
                                             .withExistingParent(c.getName() + suffix,
-                                                    CreatePrism.asResource("block/scaffold/block" + suffix))
+                                                    CrystalClear.asResource("block/scaffold/block" + suffix))
                                             .texture("top", getTopTexture(casing))
                                             .texture("inside", getInsideTexture(casing))
                                             .texture("side", getSideTexture(casing))
-                                            .texture("casing", CreatePrism.asResource("block/" + casing +
+                                            .texture("casing", CrystalClear.asResource("block/" + casing +
                                                     (clear ? "_clear" : "") + "_glass_casing"))
                                             .texture("particle", getSideTexture(casing)))
                                     .build();
@@ -307,13 +307,13 @@ public class GlassBlockBuilders {
                                 .requires(getScaffoldingBase(casing))
                                 .requires(AllPaletteBlocks.FRAMED_GLASS.get())
                                 .unlockedBy("has_scaffolding", RegistrateRecipeProvider.has(getScaffoldingBase(casing)))
-                                .save(p, CreatePrism.asResource("crafting/glass_scaffolding/" + c.getName())))
+                                .save(p, CrystalClear.asResource("crafting/glass_scaffolding/" + c.getName())))
                 .item(MetalScaffoldingBlockItem::new)
-                .model((c, p) -> p.withExistingParent(c.getName(), CreatePrism.asResource("block/scaffold/item"))
+                .model((c, p) -> p.withExistingParent(c.getName(), CrystalClear.asResource("block/scaffold/item"))
                         .texture("top", getTopTexture(casing))
                         .texture("inside", getInsideTexture(casing))
                         .texture("side", getSideTexture(casing))
-                        .texture("casing", CreatePrism.asResource("block/" + casing +
+                        .texture("casing", CrystalClear.asResource("block/" + casing +
                                 (clear ? "_clear" : "") + "_glass_casing"))
                         .texture("particle", getSideTexture(casing)))
                 .build()
@@ -355,7 +355,7 @@ public class GlassBlockBuilders {
         } else if (casing.equals("brass")) {
             return ResourceLocation.parse("create:block/brass_gearbox");
         } else {
-            return CreatePrism.asResource("block/" + casing + "_gearbox");
+            return CrystalClear.asResource("block/" + casing + "_gearbox");
         }
     }
 
@@ -365,17 +365,17 @@ public class GlassBlockBuilders {
         } else if (casing.equals("brass")) {
             return ResourceLocation.withDefaultNamespace("block/stripped_dark_oak_log_top");
         } else {
-            return CreatePrism.asResource("block/" + casing + "_backing");
+            return CrystalClear.asResource("block/" + casing + "_backing");
         }
     }
 
     private static ResourceLocation getSiding(String casing, boolean large) {
-        return CreatePrism.asResource("block/encased_cogwheels/" +
+        return CrystalClear.asResource("block/encased_cogwheels/" +
                 (large ? "large_" : "") + casing + "_encased_cogwheel_side");
     }
 
     private static ResourceLocation getIlluminationSiding(String casing, boolean large) {
-        return CreatePrism.asResource("block/encased_cogwheels/" +
+        return CrystalClear.asResource("block/encased_cogwheels/" +
                 (large ? "large_" : "") + casing + "_illumination_encased_cogwheel_side");
     }
 
@@ -407,7 +407,7 @@ public class GlassBlockBuilders {
         if (casing.equals("andesite") || casing.equals("brass") || casing.equals("copper")) {
             return ResourceLocation.parse("create:block/funnel/" + casing + "_funnel_frame");
         } else {
-            return CreatePrism.asResource("block/scaffold/" + casing + "_frame");
+            return CrystalClear.asResource("block/scaffold/" + casing + "_frame");
         }
     }
 
@@ -415,7 +415,7 @@ public class GlassBlockBuilders {
         if (casing.equals("andesite") || casing.equals("brass") || casing.equals("copper")) {
             return ResourceLocation.parse("create:block/scaffold/" + casing + "_scaffold_inside");
         } else {
-            return CreatePrism.asResource("block/scaffold/" + casing + "_scaffold_inside");
+            return CrystalClear.asResource("block/scaffold/" + casing + "_scaffold_inside");
         }
     }
 
@@ -423,7 +423,7 @@ public class GlassBlockBuilders {
         if (casing.equals("andesite") || casing.equals("brass") || casing.equals("copper")) {
             return ResourceLocation.parse("create:block/scaffold/" + casing + "_scaffold");
         } else {
-            return CreatePrism.asResource("block/scaffold/" + casing + "_scaffold");
+            return CrystalClear.asResource("block/scaffold/" + casing + "_scaffold");
         }
     }
 

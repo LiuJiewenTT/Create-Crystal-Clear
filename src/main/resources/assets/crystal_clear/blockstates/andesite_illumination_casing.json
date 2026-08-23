@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "createprism:block/andesite_illumination_casing"
+      "model": "crystal_clear:block/andesite_illumination_casing"
     }
   }
 }

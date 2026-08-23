@@ -1,4 +1,4 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
 import com.simibubi.create.foundation.data.CreateBlockEntityBuilder;
 import com.simibubi.create.foundation.item.TooltipModifier;

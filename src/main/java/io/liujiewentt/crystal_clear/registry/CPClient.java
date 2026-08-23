@@ -1,7 +1,7 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
-import com.adonis.prism.CreatePrism;
-import com.adonis.prism.ponder.CPPonderPlugin;
+import io.liujiewentt.crystal_clear.CrystalClear;
+import io.liujiewentt.crystal_clear.ponder.CPPonderPlugin;
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -10,7 +10,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
-@EventBusSubscriber(modid = CreatePrism.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = CrystalClear.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class CPClient {
 
     @SubscribeEvent

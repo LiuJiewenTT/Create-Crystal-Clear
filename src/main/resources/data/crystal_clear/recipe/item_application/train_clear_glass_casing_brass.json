@@ -2,7 +2,7 @@
   "type": "create:item_application",
   "ingredients": [
     {
-      "item": "createprism:brass_clear_glass_casing"
+      "item": "crystal_clear:brass_clear_glass_casing"
     },
     {
       "tag": "c:plates/obsidian"
@@ -10,7 +10,7 @@
   ],
   "results": [
     {
-      "id": "createprism:train_clear_glass_casing"
+      "id": "crystal_clear:train_clear_glass_casing"
     }
   ]
 }

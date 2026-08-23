@@ -1,10 +1,10 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "createprism:train_glass_casing"
+    "item": "crystal_clear:train_glass_casing"
   },
   "result": {
-    "id": "createprism:train_clear_glass_casing",
+    "id": "crystal_clear:train_clear_glass_casing",
     "count": 1
   }
 }

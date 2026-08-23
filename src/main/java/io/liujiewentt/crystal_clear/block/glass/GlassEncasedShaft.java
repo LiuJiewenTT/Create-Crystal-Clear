@@ -1,6 +1,6 @@
-package com.adonis.prism.block.glass;
+package io.liujiewentt.crystal_clear.block.glass;
 
-import com.adonis.prism.registry.CPBlockEntities;
+import io.liujiewentt.crystal_clear.registry.CPBlockEntities;
 import com.simibubi.create.content.decoration.encasing.EncasedBlock;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.encased.EncasedCogwheelBlock;

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "createprism:copper_clear_glass_scaffolding"
+          "name": "crystal_clear:copper_clear_glass_scaffolding"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "createprism:blocks/copper_clear_glass_scaffolding"
+  "random_sequence": "crystal_clear:blocks/copper_clear_glass_scaffolding"
 }

@@ -1,7 +1,7 @@
 {
-  "parent": "createprism:block/glass_encased_shaft/block",
+  "parent": "crystal_clear:block/glass_encased_shaft/block",
   "textures": {
-    "casing": "createprism:block/train_clear_glass_casing",
-    "opening": "createprism:block/train_gearbox"
+    "casing": "crystal_clear:block/train_clear_glass_casing",
+    "opening": "crystal_clear:block/train_gearbox"
   }
 }

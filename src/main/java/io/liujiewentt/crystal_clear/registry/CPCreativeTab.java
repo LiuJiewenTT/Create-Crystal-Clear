@@ -1,6 +1,6 @@
-package com.adonis.prism.registry;
+package io.liujiewentt.crystal_clear.registry;
 
-import com.adonis.prism.CreatePrism;
+import io.liujiewentt.crystal_clear.CrystalClear;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,11 +11,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CPCreativeTab {
     private static final DeferredRegister<CreativeModeTab> REGISTER =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CreatePrism.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrystalClear.MOD_ID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN_TAB = REGISTER.register("main",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.createprism.main"))
+                    .title(Component.translatable("itemGroup.crystal_clear.main"))
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .icon(() -> CPBlocks.ILLUMINATION_CASINGS.getCasing("brass").asItem().getDefaultInstance())
                     .displayItems((parameters, output) -> {

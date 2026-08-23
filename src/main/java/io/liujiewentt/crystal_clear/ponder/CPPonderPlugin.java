@@ -1,6 +1,6 @@
-package com.adonis.prism.ponder;
+package io.liujiewentt.crystal_clear.ponder;
 
-import com.adonis.prism.CreatePrism;
+import io.liujiewentt.crystal_clear.CrystalClear;
 import net.createmod.ponder.api.registration.PonderPlugin;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.createmod.ponder.api.registration.PonderTagRegistrationHelper;
@@ -10,7 +10,7 @@ public class CPPonderPlugin implements PonderPlugin {
 
     @Override
     public String getModId() {
-        return CreatePrism.MOD_ID;
+        return CrystalClear.MOD_ID;
     }
 
     @Override

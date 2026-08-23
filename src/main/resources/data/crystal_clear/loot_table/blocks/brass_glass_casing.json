@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "createprism:brass_glass_casing"
+          "name": "crystal_clear:brass_glass_casing"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "createprism:blocks/brass_glass_casing"
+  "random_sequence": "crystal_clear:blocks/brass_glass_casing"
 }
