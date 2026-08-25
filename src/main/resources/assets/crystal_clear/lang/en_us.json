@@ -56,5 +56,7 @@
   "block.crystal_clear.train_illumination_encased_large_cogwheel": "Train Illumination Encased Large Cogwheel",
   "block.crystal_clear.train_illumination_encased_shaft": "Train Illumination Encased Shaft",
   "config.crystal_clear.creative": "Creative Mode",
-  "config.crystal_clear.creative.show_encased_variants": "Show Encased Variants"
+  "config.crystal_clear.creative.tooltip": "Creative mode display options",
+  "config.crystal_clear.creative.show_encased_variants": "Show Encased Variants",
+  "config.crystal_clear.creative.show_encased_variants.tooltip": "Show encased shafts, cogwheels, and large cogwheels in the creative tab. These are secondary states created by applying casings to Create's shafts/cogwheels. Disabled by default to keep the tab clean."
 }

@@ -56,5 +56,7 @@
   "block.crystal_clear.train_illumination_encased_large_cogwheel": "列车照明大齿轮箱",
   "block.crystal_clear.train_illumination_encased_shaft": "列车照明传动杆箱",
   "config.crystal_clear.creative": "创造模式",
-  "config.crystal_clear.creative.show_encased_variants": "显示包覆方块变体"
+  "config.crystal_clear.creative.tooltip": "创造模式显示选项",
+  "config.crystal_clear.creative.show_encased_variants": "显示包覆方块变体",
+  "config.crystal_clear.creative.show_encased_variants.tooltip": "在创造栏中显示包覆的轴、齿轮和大齿轮。这些是将机壳应用于 Create 的传动杆/齿轮后产生的次级状态物品。默认关闭以保持栏面整洁。"
 }

@@ -24,4 +24,5 @@ runs
 run-data
 
 repo
+*.jar
 keep_local/
