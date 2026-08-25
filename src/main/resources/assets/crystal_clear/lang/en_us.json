@@ -54,5 +54,7 @@
   "block.crystal_clear.train_illumination_casing": "Train Illumination Casing",
   "block.crystal_clear.train_illumination_encased_cogwheel": "Train Illumination Encased Cogwheel",
   "block.crystal_clear.train_illumination_encased_large_cogwheel": "Train Illumination Encased Large Cogwheel",
-  "block.crystal_clear.train_illumination_encased_shaft": "Train Illumination Encased Shaft"
+  "block.crystal_clear.train_illumination_encased_shaft": "Train Illumination Encased Shaft",
+  "config.crystal_clear.creative": "Creative Mode",
+  "config.crystal_clear.creative.show_encased_variants": "Show Encased Variants"
 }

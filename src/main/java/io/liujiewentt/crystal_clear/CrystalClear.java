@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.util.Random;
@@ -36,6 +37,9 @@ public class CrystalClear {
         CPItems.register();
         CPCreativeTab.register(modEventBus);
         CPPartialModels.register();
+
+        // Register config
+        modContainer.registerConfig(ModConfig.Type.CLIENT, CPConfig.SPEC);
 
         // Register events
         modEventBus.addListener(this::onCommonSetup);

@@ -54,5 +54,7 @@
   "block.crystal_clear.train_illumination_casing": "列车照明机壳",
   "block.crystal_clear.train_illumination_encased_cogwheel": "列车照明齿轮箱",
   "block.crystal_clear.train_illumination_encased_large_cogwheel": "列车照明大齿轮箱",
-  "block.crystal_clear.train_illumination_encased_shaft": "列车照明传动杆箱"
+  "block.crystal_clear.train_illumination_encased_shaft": "列车照明传动杆箱",
+  "config.crystal_clear.creative": "创造模式",
+  "config.crystal_clear.creative.show_encased_variants": "显示包覆方块变体"
 }
