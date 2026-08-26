@@ -26,3 +26,7 @@ run-data
 repo
 *.jar
 keep_local/
+
+# Reference assets extracted from Create/MC jars for Blockbench modeling (not part of the mod)
+src/main/resources/assets/create/
+src/main/resources/assets/minecraft/

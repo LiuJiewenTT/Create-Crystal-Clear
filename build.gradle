@@ -139,7 +139,14 @@ neoForge.ideSyncTask generateModMetadata
 tasks.withType(Jar) {
     from "LICENSE.txt"
     exclude ".cache"
+    // Exclude reference assets extracted from Create/MC jars (Blockbench modeling only)
+    exclude "assets/create/**"
+    exclude "assets/minecraft/**"
 }
+
+// Exclude reference assets from the resource processing pipeline (won't be copied to build output)
+sourceSets.main.resources.exclude "assets/create/**"
+sourceSets.main.resources.exclude "assets/minecraft/**"
 
 
 build.dependsOn(spotlessApply)
