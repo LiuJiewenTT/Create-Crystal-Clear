@@ -196,10 +196,7 @@ public class GlassBlockBuilders {
                             String suffix = (blockState.getValue(GlassEncasedCogwheel.TOP_SHAFT) ? "_top" : "")
                                     + (blockState.getValue(GlassEncasedCogwheel.BOTTOM_SHAFT) ? "_bottom" : "");
                             String modelName = ctx.getName() + suffix;
-                            // 原本分叉：large ? "encased_large_cogwheel" : "encased_cogwheel"
-                            // 但 encased_large_cogwheel/ 目录从未存在，大小齿轮共用 encased_cogwheel/ 父模型，仅 siding 贴图不同
-                            // 这里似乎没有使用不同目录和模型的需要
-                            String blockFolder = "encased_cogwheel";
+                            String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
                             return prov.models()
                                     .withExistingParent(modelName, CrystalClear.asResource("block/" + blockFolder + "/block" + suffix))
                                     .texture("particle", CrystalClear.asResource("block/" + name + "_glass_casing"))
@@ -208,23 +205,20 @@ public class GlassBlockBuilders {
                                     .texture("opening", getOpening(casingType))
                                     .texture("siding", getSiding(casingType, large));
                         }, false))
-                .item()
-                .model((ctx, prov) -> {
-                    // 原本分叉：large ? "encased_large_cogwheel" : "encased_cogwheel"
-                    // 但 encased_large_cogwheel/ 目录从未存在，大小齿轮共用 encased_cogwheel/ 父模型，仅 siding 贴图不同
-                    // 这里似乎没有使用不同目录和模型的需要
-                    String blockFolder = "encased_cogwheel";
-                    prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
-                            .texture("casing", CrystalClear.asResource("block/" + name + "_glass_casing"))
-                            .texture("backing", getBacking(casingType))
-                            .texture("opening", getOpening(casingType))
-                            .texture("siding", getSiding(casingType, large));
-                })
-                .build()
-                .register();
-    }
+			.item()
+				.model((ctx, prov) -> {
+					String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
+					prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
+							.texture("casing", CrystalClear.asResource("block/" + name + "_glass_casing"))
+							.texture("backing", getBacking(casingType))
+							.texture("opening", getOpening(casingType))
+							.texture("siding", getSiding(casingType, large));
+				})
+				.build()
+				.register();
+	}
 
-    // Illumination Encased Cogwheel Builder
+	// Illumination Encased Cogwheel Builder
     public static <T extends AbstractRegistrate<?>> BlockEntry<IlluminationEncasedCogwheel> illuminationEncasedCogwheel(
             T reg, String casingType, boolean large,
             NonNullFunction<BlockBehaviour.Properties, IlluminationEncasedCogwheel> factory) {
@@ -260,10 +254,7 @@ public class GlassBlockBuilders {
                             String suffix = (blockState.getValue(GlassEncasedCogwheel.TOP_SHAFT) ? "_top" : "")
                                     + (blockState.getValue(GlassEncasedCogwheel.BOTTOM_SHAFT) ? "_bottom" : "");
                             String modelName = ctx.getName() + suffix;
-                            // 原本分叉：large ? "encased_large_cogwheel" : "encased_cogwheel"
-                            // 但 encased_large_cogwheel/ 目录从未存在，大小齿轮共用 encased_cogwheel/ 父模型，仅 siding 贴图不同
-                            // 这里似乎没有使用不同目录和模型的需要
-                            String blockFolder = "encased_cogwheel";
+                            String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
                             return prov.models()
                                     .withExistingParent(modelName, CrystalClear.asResource("block/" + blockFolder + "/block" + suffix))
                                     .texture("particle", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
@@ -272,21 +263,18 @@ public class GlassBlockBuilders {
                                     .texture("opening", getOpening(casingType))
                                     .texture("siding", getIlluminationSiding(casingType, large));
                         }, false))
-                .item()
-                .model((ctx, prov) -> {
-                    // 原本分叉：large ? "encased_large_cogwheel" : "encased_cogwheel"
-                    // 但 encased_large_cogwheel/ 目录从未存在，大小齿轮共用 encased_cogwheel/ 父模型，仅 siding 贴图不同
-                    // 这里似乎没有使用不同目录和模型的需要
-                    String blockFolder = "encased_cogwheel";
-                    prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
-                            .texture("casing", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
-                            .texture("backing", getBacking(casingType))
-                            .texture("opening", getOpening(casingType))
-                            .texture("siding", getIlluminationSiding(casingType, large));
-                })
-                .build()
-                .register();
-    }
+			.item()
+				.model((ctx, prov) -> {
+					String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
+					prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
+							.texture("casing", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
+							.texture("backing", getBacking(casingType))
+							.texture("opening", getOpening(casingType))
+							.texture("siding", getIlluminationSiding(casingType, large));
+				})
+				.build()
+				.register();
+	}
 
     // Glass Scaffolding Builder
     public static <T extends AbstractRegistrate<?>> BlockEntry<MetalScaffoldingBlock> glassScaffolding(

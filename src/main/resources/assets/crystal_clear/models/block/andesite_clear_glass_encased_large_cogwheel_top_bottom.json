@@ -1,5 +1,5 @@
 {
-  "parent": "crystal_clear:block/encased_cogwheel/block_top_bottom",
+  "parent": "crystal_clear:block/encased_large_cogwheel/block_top_bottom",
   "textures": {
     "backing": "minecraft:block/stripped_spruce_log_top",
     "casing": "crystal_clear:block/andesite_clear_glass_casing",

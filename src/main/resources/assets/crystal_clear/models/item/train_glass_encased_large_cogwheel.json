@@ -1,5 +1,5 @@
 {
-  "parent": "crystal_clear:block/encased_cogwheel/item",
+  "parent": "crystal_clear:block/encased_large_cogwheel/item",
   "textures": {
     "backing": "crystal_clear:block/train_backing",
     "casing": "crystal_clear:block/train_glass_casing",
