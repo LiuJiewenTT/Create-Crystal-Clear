@@ -13,6 +13,8 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 import java.util.Random;
 
@@ -40,6 +42,10 @@ public class CrystalClear {
 
         // Register config
         modContainer.registerConfig(ModConfig.Type.CLIENT, CPConfig.SPEC);
+
+        // Register built-in config screen (NeoForge ConfigurationScreen)
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class,
+                (mc, parent) -> new ConfigurationScreen(mc, parent));
 
         // Register events
         modEventBus.addListener(this::onCommonSetup);

@@ -106,7 +106,8 @@ dependencies {
     localRuntime("top.theillusivec4.curios:curios-neoforge:${curios_version}+${curios_minecraft_version}")
 
     // Runtime-only dev tool: in-game config screen for testing ModConfigSpec
-    localRuntime name: 'configured-neoforge-1.21.1-2.6.1'
+    // Commented out — switching to NeoForge built-in ConfigurationScreen (IConfigScreenFactory)
+    // localRuntime name: 'configured-neoforge-1.21.1-2.6.1'
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
