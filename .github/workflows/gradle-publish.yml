@@ -30,6 +30,8 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
+        # 如果手动输入了 tag_name，就 checkout 这个 tag；否则（release触发）就 checkout 默认的 ref
+        ref: ${{ github.event.inputs.tag_name || github.ref }}
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
