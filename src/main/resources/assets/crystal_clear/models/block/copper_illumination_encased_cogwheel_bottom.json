@@ -1,7 +1,7 @@
 {
   "parent": "crystal_clear:block/encased_cogwheel/block_bottom",
   "textures": {
-    "backing": "minecraft:block/stripped_dark_oak_log_top",
+    "backing": "crystal_clear:block/copper_backing",
     "casing": "crystal_clear:block/copper_illumination_casing",
     "opening": "crystal_clear:block/copper_gearbox",
     "particle": "crystal_clear:block/copper_illumination_casing",
