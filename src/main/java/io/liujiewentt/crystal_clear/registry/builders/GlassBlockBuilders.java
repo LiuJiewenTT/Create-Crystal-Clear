@@ -14,12 +14,17 @@ import com.simibubi.create.content.decoration.MetalScaffoldingBlockItem;
 import com.simibubi.create.content.decoration.MetalScaffoldingCTBehaviour;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
 import com.simibubi.create.content.decoration.palettes.AllPaletteBlocks;
+import com.simibubi.create.content.fluids.PipeAttachmentModel;
+import com.simibubi.create.content.fluids.pipes.EncasedPipeBlock;
 import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.tterrag.registrate.AbstractRegistrate;
+import com.tterrag.registrate.providers.DataGenContext;
+import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import net.createmod.catnip.data.Couple;
+import net.createmod.catnip.data.Iterate;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -27,12 +32,16 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 
 import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
+import static com.simibubi.create.foundation.data.CreateRegistrate.blockModel;
 import static com.simibubi.create.foundation.data.CreateRegistrate.casingConnectivity;
 import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
@@ -127,6 +136,106 @@ public class GlassBlockBuilders {
                 .register();
     }
 
+    // Glass Encased Pipe Builder
+    public static <T extends AbstractRegistrate<?>> BlockEntry<GlassEncasedPipeBlock> glassEncasedPipe(
+            T reg, String casing, boolean clear,
+            NonNullFunction<BlockBehaviour.Properties, GlassEncasedPipeBlock> factory) {
+        String newName = casing + (clear ? "_clear_glass_encased_pipe" : "_glass_encased_pipe");
+        CTSpriteShiftEntry ctEntry = CPSpriteShifts.getCasingShift(casing, clear);
+
+        return reg.block(newName, factory)
+                .initialProperties(() -> Blocks.GLASS)
+                .properties(BlockBehaviour.Properties::noOcclusion)
+                .properties(GlassBlockBuilders::glassProperties)
+                .loot((p, lb) -> p.dropOther(lb, AllBlocks.FLUID_PIPE.get()))
+                .addLayer(() -> RenderType::cutout)
+                .onRegister(connectedTextures(() -> new GlassEncasedCTBehaviour(ctEntry)))
+                .onRegister(casingConnectivity((block, cc) ->
+                        cc.make(block, ctEntry, (state, face) ->
+                                !state.getValue(EncasedPipeBlock.FACING_TO_PROPERTY_MAP.get(face)))))
+                .onRegister(blockModel(() -> PipeAttachmentModel::withAO))
+                .transform(pickaxeOnly())
+                .blockstate((ctx, prov) -> {
+                    String casingTexture = "block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing";
+                    ModelFile flat = prov.models()
+                            .withExistingParent(ctx.getName() + "_flat", CrystalClear.asResource("block/glass_encased_pipe/block_flat"))
+                            .texture("casing", CrystalClear.asResource(casingTexture))
+                            .texture("opening", getOpening(casing));
+                    ModelFile open = prov.models()
+                            .withExistingParent(ctx.getName() + "_open", CrystalClear.asResource("block/glass_encased_pipe/block_open"))
+                            .texture("casing", CrystalClear.asResource(casingTexture))
+                            .texture("opening", getOpening(casing));
+                    encasedPipeBlockState(ctx, prov, flat, open);
+                })
+                .item()
+                .model((ctx, prov) -> prov
+                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_pipe/block"))
+                        .texture("casing", CrystalClear.asResource("block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing"))
+                        .texture("opening", getOpening(casing)))
+                .build()
+                .register();
+    }
+
+    // Illumination Encased Pipe Builder
+    public static <T extends AbstractRegistrate<?>> BlockEntry<IlluminationEncasedPipeBlock> illuminationEncasedPipe(
+            T reg, String casing,
+            NonNullFunction<BlockBehaviour.Properties, IlluminationEncasedPipeBlock> factory) {
+        String newName = casing + "_illumination_encased_pipe";
+        CTSpriteShiftEntry ctEntry = CPSpriteShifts.getIlluminationCasingShift(casing);
+
+        return reg.block(newName, factory)
+                .initialProperties(() -> Blocks.GLOWSTONE)
+                .properties(BlockBehaviour.Properties::noOcclusion)
+                .properties(p -> p.lightLevel(s -> 15))
+                .properties(GlassBlockBuilders::glassProperties)
+                .loot((p, lb) -> p.dropOther(lb, AllBlocks.FLUID_PIPE.get()))
+                .addLayer(() -> RenderType::translucent)
+                .onRegister(connectedTextures(() -> new IlluminationEncasedCTBehaviour(ctEntry)))
+                .onRegister(casingConnectivity((block, cc) ->
+                        cc.make(block, ctEntry, (state, face) ->
+                                !state.getValue(EncasedPipeBlock.FACING_TO_PROPERTY_MAP.get(face)))))
+                .onRegister(blockModel(() -> PipeAttachmentModel::withAO))
+                .transform(pickaxeOnly())
+                .blockstate((ctx, prov) -> {
+                    String casingTexture = "block/" + casing + "_illumination_casing";
+                    ModelFile flat = prov.models()
+                            .withExistingParent(ctx.getName() + "_flat", CrystalClear.asResource("block/illumination_encased_pipe/block_flat"))
+                            .texture("casing", CrystalClear.asResource(casingTexture))
+                            .texture("opening", getOpening(casing));
+                    ModelFile open = prov.models()
+                            .withExistingParent(ctx.getName() + "_open", CrystalClear.asResource("block/illumination_encased_pipe/block_open"))
+                            .texture("casing", CrystalClear.asResource(casingTexture))
+                            .texture("opening", getOpening(casing));
+                    encasedPipeBlockState(ctx, prov, flat, open);
+                })
+                .item()
+                .model((ctx, prov) -> prov
+                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/illumination_encased_pipe/block"))
+                        .texture("casing", CrystalClear.asResource("block/" + casing + "_illumination_casing"))
+                        .texture("opening", getOpening(casing)))
+                .build()
+                .register();
+    }
+
+    // Helper: generate multipart blockstate for encased pipe (6 directions x flat/open)
+    private static void encasedPipeBlockState(DataGenContext<Block, ?> ctx,
+                                              RegistrateBlockstateProvider prov,
+                                              ModelFile flat, ModelFile open) {
+        MultiPartBlockStateBuilder builder = prov.getMultipartBuilder(ctx.get());
+        for (boolean flatPass : Iterate.trueAndFalse) {
+            for (Direction d : Iterate.directions) {
+                int verticalAngle = d == Direction.UP ? 90 : d == Direction.DOWN ? -90 : 0;
+                builder.part()
+                        .modelFile(flatPass ? flat : open)
+                        .rotationX(verticalAngle)
+                        .rotationY((int) (d.toYRot() + (d.getAxis().isVertical() ? 90 : 0)) % 360)
+                        .addModel()
+                        .condition(EncasedPipeBlock.FACING_TO_PROPERTY_MAP.get(d), !flatPass)
+                        .end();
+            }
+        }
+    }
+
     // Illumination Encased Shaft Builder
     public static <T extends AbstractRegistrate<?>> BlockEntry<IlluminationEncasedShaft> illuminationEncasedShaft(
             T reg, String casing,
@@ -205,17 +314,17 @@ public class GlassBlockBuilders {
                                     .texture("opening", getOpening(casingType))
                                     .texture("siding", getSiding(casingType, large));
                         }, false))
-			.item()
-				.model((ctx, prov) -> {
-					String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
-					prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
-							.texture("casing", CrystalClear.asResource("block/" + name + "_glass_casing"))
-							.texture("backing", getBacking(casingType))
-							.texture("opening", getOpening(casingType))
-							.texture("siding", getSiding(casingType, large));
-				})
-				.build()
-				.register();
+		.item()
+			.model((ctx, prov) -> {
+				String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
+				prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
+						.texture("casing", CrystalClear.asResource("block/" + name + "_glass_casing"))
+						.texture("backing", getBacking(casingType))
+						.texture("opening", getOpening(casingType))
+						.texture("siding", getSiding(casingType, large));
+			})
+			.build()
+			.register();
 	}
 
 	// Illumination Encased Cogwheel Builder
@@ -263,17 +372,17 @@ public class GlassBlockBuilders {
                                     .texture("opening", getOpening(casingType))
                                     .texture("siding", getIlluminationSiding(casingType, large));
                         }, false))
-			.item()
-				.model((ctx, prov) -> {
-					String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
-					prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
-							.texture("casing", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
-							.texture("backing", getBacking(casingType))
-							.texture("opening", getOpening(casingType))
-							.texture("siding", getIlluminationSiding(casingType, large));
-				})
-				.build()
-				.register();
+		.item()
+			.model((ctx, prov) -> {
+				String blockFolder = large ? "encased_large_cogwheel" : "encased_cogwheel";
+				prov.withExistingParent(ctx.getName(), CrystalClear.asResource("block/" + blockFolder + "/item"))
+						.texture("casing", CrystalClear.asResource("block/" + casingType + "_illumination_casing"))
+						.texture("backing", getBacking(casingType))
+						.texture("opening", getOpening(casingType))
+						.texture("siding", getIlluminationSiding(casingType, large));
+			})
+			.build()
+			.register();
 	}
 
     // Glass Scaffolding Builder

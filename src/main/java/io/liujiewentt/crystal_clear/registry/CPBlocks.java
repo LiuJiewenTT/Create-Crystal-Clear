@@ -101,6 +101,22 @@ public class CPBlocks {
     public static final BlockEntry<MetalScaffoldingBlock> CLEAR_COPPER_GLASS_SCAFFOLD =
             glassScaffolding(REGISTRATE, "copper", true, MetalScaffoldingBlock::new);
 
+    // ========== Glass Encased Pipes ==========
+    public static final GlassBlockList<GlassEncasedPipeBlock> GLASS_ENCASED_PIPES =
+            new GlassBlockList<>(CasingTypes.GENERAL_ENCASED.holders,
+                    holder -> glassEncasedPipe(REGISTRATE, holder.name(), false,
+                            p -> new GlassEncasedPipeBlock(p, () -> GLASS_CASINGS.getCasing(holder.name()))));
+
+    public static final GlassBlockList<GlassEncasedPipeBlock> CLEAR_GLASS_ENCASED_PIPES =
+            new GlassBlockList<>(CasingTypes.GENERAL_ENCASED.holders,
+                    holder -> glassEncasedPipe(REGISTRATE, holder.name(), true,
+                            p -> new GlassEncasedPipeBlock(p, () -> CLEAR_GLASS_CASINGS.getCasing(holder.name()))));
+
+    public static final GlassBlockList<IlluminationEncasedPipeBlock> ILLUMINATION_ENCASED_PIPES =
+            new GlassBlockList<>(CasingTypes.ILLUMINATION_ENCASED.holders,
+                    holder -> illuminationEncasedPipe(REGISTRATE, holder.name(),
+                            p -> new IlluminationEncasedPipeBlock(p, () -> ILLUMINATION_CASINGS.getCasing(holder.name()))));
+
     public static void register() {
         // Static initialization - forces all static fields to be initialized
     }

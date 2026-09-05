@@ -1,0 +1,7 @@
+{
+  "parent": "crystal_clear:block/illumination_encased_pipe/block",
+  "textures": {
+    "casing": "crystal_clear:block/andesite_illumination_casing",
+    "opening": "create:block/gearbox"
+  }
+}

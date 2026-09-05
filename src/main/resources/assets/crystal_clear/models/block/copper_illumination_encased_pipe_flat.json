@@ -1,0 +1,7 @@
+{
+  "parent": "crystal_clear:block/illumination_encased_pipe/block_flat",
+  "textures": {
+    "casing": "crystal_clear:block/copper_illumination_casing",
+    "opening": "crystal_clear:block/copper_gearbox"
+  }
+}

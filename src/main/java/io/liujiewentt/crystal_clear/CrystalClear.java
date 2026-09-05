@@ -84,6 +84,14 @@ public class CrystalClear {
                 EncasingRegistry.addVariant(AllBlocks.LARGE_COGWHEEL.get(), entry.get()));
         CPBlocks.LARGE_ILLUMINATION_ENCASED_COGWHEELS.blockEntryMap.values().forEach(entry ->
                 EncasingRegistry.addVariant(AllBlocks.LARGE_COGWHEEL.get(), entry.get()));
+
+        // Fluid pipe variants
+        CPBlocks.GLASS_ENCASED_PIPES.blockEntryMap.values().forEach(entry ->
+                EncasingRegistry.addVariant(AllBlocks.FLUID_PIPE.get(), entry.get()));
+        CPBlocks.CLEAR_GLASS_ENCASED_PIPES.blockEntryMap.values().forEach(entry ->
+                EncasingRegistry.addVariant(AllBlocks.FLUID_PIPE.get(), entry.get()));
+        CPBlocks.ILLUMINATION_ENCASED_PIPES.blockEntryMap.values().forEach(entry ->
+                EncasingRegistry.addVariant(AllBlocks.FLUID_PIPE.get(), entry.get()));
     }
 
     public static ResourceLocation asResource(String path) {

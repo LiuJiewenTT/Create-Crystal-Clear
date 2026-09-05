@@ -47,6 +47,11 @@ public class CPCreativeTab {
                             // Illumination Encased Cogwheels
                             CPBlocks.SMALL_ILLUMINATION_ENCASED_COGWHEELS.blockEntryMap.values().forEach(entry -> output.accept(entry));
                             CPBlocks.LARGE_ILLUMINATION_ENCASED_COGWHEELS.blockEntryMap.values().forEach(entry -> output.accept(entry));
+
+                            // Glass Encased Pipes
+                            CPBlocks.GLASS_ENCASED_PIPES.blockEntryMap.values().forEach(entry -> output.accept(entry));
+                            CPBlocks.CLEAR_GLASS_ENCASED_PIPES.blockEntryMap.values().forEach(entry -> output.accept(entry));
+                            CPBlocks.ILLUMINATION_ENCASED_PIPES.blockEntryMap.values().forEach(entry -> output.accept(entry));
                         }
 
                         // ========== Glass Scaffoldings ==========

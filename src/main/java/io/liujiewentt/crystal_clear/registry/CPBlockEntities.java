@@ -1,6 +1,7 @@
 package io.liujiewentt.crystal_clear.registry;
 
 import com.simibubi.create.AllPartialModels;
+import com.simibubi.create.content.fluids.pipes.FluidPipeBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.content.kinetics.base.ShaftRenderer;
 import com.simibubi.create.content.kinetics.base.ShaftVisual;
@@ -73,6 +74,19 @@ public class CPBlockEntities {
                             Models.partial(AllPartialModels.SHAFTLESS_LARGE_COGWHEEL)))
             .validBlocks(CPBlocks.LARGE_ILLUMINATION_ENCASED_COGWHEELS.toArray())
             .renderer(() -> (context) -> new EncasedCogRenderer(context, true))
+            .register();
+
+    // Glass Encased Pipe Block Entity (reuses FluidPipeBlockEntity, shared by glass + clear glass)
+    public static final BlockEntityEntry<FluidPipeBlockEntity> GLASS_ENCASED_PIPE = REGISTRATE
+            .blockEntity("glass_encased_pipe", FluidPipeBlockEntity::new)
+            .validBlocks(CPBlocks.GLASS_ENCASED_PIPES.toArray())
+            .validBlocks(CPBlocks.CLEAR_GLASS_ENCASED_PIPES.toArray())
+            .register();
+
+    // Illumination Encased Pipe Block Entity
+    public static final BlockEntityEntry<FluidPipeBlockEntity> ILLUMINATION_ENCASED_PIPE = REGISTRATE
+            .blockEntity("illumination_encased_pipe", FluidPipeBlockEntity::new)
+            .validBlocks(CPBlocks.ILLUMINATION_ENCASED_PIPES.toArray())
             .register();
 
     public static void register() {
