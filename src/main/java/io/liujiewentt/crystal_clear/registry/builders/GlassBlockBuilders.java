@@ -430,8 +430,9 @@ public class GlassBlockBuilders {
                                 .unlockedBy("has_scaffolding", RegistrateRecipeProvider.has(getScaffoldingBase(casing)))
                                 .save(p, CrystalClear.asResource("crafting/glass_scaffolding/" + c.getName())))
                 .item(MetalScaffoldingBlockItem::new)
-                .model((c, p) -> p.withExistingParent(c.getName(), CrystalClear.asResource("block/scaffold/item"))
-                        .texture("top", getTopTexture(casing))
+                .model((c, p) -> p.withExistingParent(c.getName(), CrystalClear.asResource("block/scaffold/block"))
+                        // item top uses glass_casing (was getTopTexture=funnel_frame); TODO: scaffold top face display config (none/top-only/all)
+                        .texture("top", CrystalClear.asResource("block/" + casing + (clear ? "_clear" : "") + "_glass_casing"))
                         .texture("inside", getInsideTexture(casing))
                         .texture("side", getSideTexture(casing))
                         .texture("casing", CrystalClear.asResource("block/" + casing +
