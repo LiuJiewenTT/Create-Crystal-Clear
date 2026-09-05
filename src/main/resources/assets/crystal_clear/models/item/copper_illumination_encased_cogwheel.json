@@ -4,6 +4,6 @@
     "backing": "crystal_clear:block/copper_backing",
     "casing": "crystal_clear:block/copper_illumination_casing",
     "opening": "crystal_clear:block/copper_gearbox",
-    "siding": "crystal_clear:block/encased_cogwheels/copper_encased_cogwheel_side"
+    "siding": "crystal_clear:block/encased_cogwheels/copper_illumination_encased_cogwheel_side"
   }
 }
