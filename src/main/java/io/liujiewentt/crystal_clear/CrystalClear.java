@@ -6,6 +6,7 @@ import com.simibubi.create.content.decoration.encasing.EncasingRegistry;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
+import com.tterrag.registrate.providers.ProviderType;
 import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
@@ -29,6 +30,23 @@ public class CrystalClear {
                     new ItemDescription.Modifier(item, FontHelper.Palette.STANDARD_CREATE)
                             .andThen(TooltipModifier.mapNull(KineticStats.create(item)))
             );
+
+    static {
+        // Add non-block/item lang entries (itemGroup, config) to datagen output.
+        // Registrate only auto-generates lang for registered blocks/items;
+        // these keys are used by the creative tab and NeoForge/Configured config screen.
+        REGISTRATE.addDataGenerator(ProviderType.LANG, provider -> {
+            provider.add("itemGroup.crystal_clear.main", "Create Crystal Clear");
+
+            provider.add("config.crystal_clear.creative", "Creative Mode");
+            provider.add("config.crystal_clear.creative.tooltip", "Creative mode display options");
+            provider.add("config.crystal_clear.creative.show_encased_variants", "Show Encased Variants");
+            provider.add("config.crystal_clear.creative.show_encased_variants.tooltip",
+                    "Show encased shafts, cogwheels, and large cogwheels in the creative tab. " +
+                    "These are secondary states created by applying casings to Create's shafts/cogwheels. " +
+                    "Disabled by default to keep the tab clean.");
+        });
+    }
 
     public CrystalClear(IEventBus modEventBus, ModContainer modContainer) {
         // Register Registrate

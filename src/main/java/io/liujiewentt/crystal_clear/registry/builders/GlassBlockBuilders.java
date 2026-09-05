@@ -64,6 +64,7 @@ public class GlassBlockBuilders {
                 .onRegister(connectedTextures(() -> new EncasedCTBehaviour(ctEntry)))
                 .onRegister(casingConnectivity((block, cc) -> cc.makeCasing(block, ctEntry)))
                 .tag(AllTags.AllBlockTags.CASING.tag)
+                .transform(pickaxeOnly())
                 .recipe((c, p) ->
                         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
                                 .requires(holder.casing().get())
@@ -91,6 +92,7 @@ public class GlassBlockBuilders {
                 .onRegister(connectedTextures(() -> new EncasedCTBehaviour(ctEntry)))
                 .onRegister(casingConnectivity((block, cc) -> cc.makeCasing(block, ctEntry)))
                 .tag(AllTags.AllBlockTags.CASING.tag)
+                .transform(pickaxeOnly())
                 .recipe((c, p) ->
                         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
                                 .requires(holder.casing().get())

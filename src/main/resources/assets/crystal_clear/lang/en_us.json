@@ -1,6 +1,4 @@
 {
-  "itemGroup.crystal_clear.main": "Create Crystal Clear",
-
   "block.crystal_clear.andesite_clear_glass_casing": "Andesite Clear Glass Casing",
   "block.crystal_clear.andesite_clear_glass_encased_cogwheel": "Andesite Clear Glass Encased Cogwheel",
   "block.crystal_clear.andesite_clear_glass_encased_large_cogwheel": "Andesite Clear Glass Encased Large Cogwheel",
@@ -68,7 +66,8 @@
   "block.crystal_clear.train_illumination_encased_pipe": "Train Illumination Encased Pipe",
   "block.crystal_clear.train_illumination_encased_shaft": "Train Illumination Encased Shaft",
   "config.crystal_clear.creative": "Creative Mode",
-  "config.crystal_clear.creative.tooltip": "Creative mode display options",
   "config.crystal_clear.creative.show_encased_variants": "Show Encased Variants",
-  "config.crystal_clear.creative.show_encased_variants.tooltip": "Show encased shafts, cogwheels, and large cogwheels in the creative tab. These are secondary states created by applying casings to Create's shafts/cogwheels. Disabled by default to keep the tab clean."
+  "config.crystal_clear.creative.show_encased_variants.tooltip": "Show encased shafts, cogwheels, and large cogwheels in the creative tab. These are secondary states created by applying casings to Create's shafts/cogwheels. Disabled by default to keep the tab clean.",
+  "config.crystal_clear.creative.tooltip": "Creative mode display options",
+  "itemGroup.crystal_clear.main": "Create Crystal Clear"
 }
