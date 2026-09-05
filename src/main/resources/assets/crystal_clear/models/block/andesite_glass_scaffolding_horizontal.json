@@ -5,6 +5,6 @@
     "inside": "create:block/scaffold/andesite_scaffold_inside",
     "particle": "create:block/scaffold/andesite_scaffold",
     "side": "create:block/scaffold/andesite_scaffold",
-    "top": "create:block/funnel/andesite_funnel_frame"
+    "top": "crystal_clear:block/andesite_glass_casing"
   }
 }

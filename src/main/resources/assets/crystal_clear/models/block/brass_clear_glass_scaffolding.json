@@ -5,6 +5,6 @@
     "inside": "create:block/scaffold/brass_scaffold_inside",
     "particle": "create:block/scaffold/brass_scaffold",
     "side": "create:block/scaffold/brass_scaffold",
-    "top": "create:block/funnel/brass_funnel_frame"
+    "top": "crystal_clear:block/brass_clear_glass_casing"
   }
 }

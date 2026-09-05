@@ -415,7 +415,12 @@ public class GlassBlockBuilders {
                                     .modelFile(p.models()
                                             .withExistingParent(c.getName() + suffix,
                                                     CrystalClear.asResource("block/scaffold/block" + suffix))
-                                            .texture("top", getTopTexture(casing))
+                                            // top: glass_casing instead of getTopTexture()=funnel_frame (镂空→封闭玻璃面)
+                                            // TODO: 后续通过 hook/mixin/派生类改造 getTopTexture 逻辑，使其按配置返回不同顶面纹理
+                                            //       （全不显示=funnel_frame镂空 / 只显示最顶层 / 全部显示=glass_casing封闭），
+                                            //       改造完成后此处应恢复使用 getTopTexture()，保持代码直观性
+                                            .texture("top", CrystalClear.asResource("block/" + casing +
+                                                    (clear ? "_clear" : "") + "_glass_casing"))
                                             .texture("inside", getInsideTexture(casing))
                                             .texture("side", getSideTexture(casing))
                                             .texture("casing", CrystalClear.asResource("block/" + casing +
@@ -434,7 +439,8 @@ public class GlassBlockBuilders {
                 // model), but that file was never created and runData crashes. Temporarily reusing the block
                 // model as item parent. TODO: create block/scaffold/item.json and restore this reference.
                 .model((c, p) -> p.withExistingParent(c.getName(), CrystalClear.asResource("block/scaffold/block"))
-                        // item top uses glass_casing (was getTopTexture=funnel_frame); TODO: scaffold top face display config (none/top-only/all)
+                        // top: glass_casing instead of getTopTexture()=funnel_frame，与 block model 保持一致
+                        // TODO: 随 blockstate 侧 getTopTexture 改造一并恢复使用 getTopTexture()
                         .texture("top", CrystalClear.asResource("block/" + casing + (clear ? "_clear" : "") + "_glass_casing"))
                         .texture("inside", getInsideTexture(casing))
                         .texture("side", getSideTexture(casing))

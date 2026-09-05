@@ -5,6 +5,6 @@
     "inside": "create:block/scaffold/copper_scaffold_inside",
     "particle": "create:block/scaffold/copper_scaffold",
     "side": "create:block/scaffold/copper_scaffold",
-    "top": "create:block/funnel/copper_funnel_frame"
+    "top": "crystal_clear:block/copper_glass_casing"
   }
 }
