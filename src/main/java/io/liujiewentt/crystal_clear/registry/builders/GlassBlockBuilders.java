@@ -430,6 +430,9 @@ public class GlassBlockBuilders {
                                 .unlockedBy("has_scaffolding", RegistrateRecipeProvider.has(getScaffoldingBase(casing)))
                                 .save(p, CrystalClear.asResource("crafting/glass_scaffolding/" + c.getName())))
                 .item(MetalScaffoldingBlockItem::new)
+                // WORKAROUND: item parent should be "block/scaffold/item" per mod convention (separate item
+                // model), but that file was never created and runData crashes. Temporarily reusing the block
+                // model as item parent. TODO: create block/scaffold/item.json and restore this reference.
                 .model((c, p) -> p.withExistingParent(c.getName(), CrystalClear.asResource("block/scaffold/block"))
                         // item top uses glass_casing (was getTopTexture=funnel_frame); TODO: scaffold top face display config (none/top-only/all)
                         .texture("top", CrystalClear.asResource("block/" + casing + (clear ? "_clear" : "") + "_glass_casing"))
