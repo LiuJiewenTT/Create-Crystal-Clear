@@ -237,6 +237,11 @@ public class GlassBlockBuilders {
     }
 
     // Illumination Encased Shaft Builder
+    // NOTE: No independent illumination_encased_shaft model exists; this builder reuses
+    // glass_encased_shaft/block and glass_encased_shaft/item because the model structure is
+    // identical — only the casing texture differs (illumination_casing vs glass_casing).
+    // If a distinct model is needed in the future, create block/illumination_encased_shaft/
+    // and revert the withExistingParent calls below to reference it.
     public static <T extends AbstractRegistrate<?>> BlockEntry<IlluminationEncasedShaft> illuminationEncasedShaft(
             T reg, String casing,
             NonNullFunction<BlockBehaviour.Properties, IlluminationEncasedShaft> factory) {
@@ -258,12 +263,14 @@ public class GlassBlockBuilders {
                 .transform(pickaxeOnly())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, state -> prov.models()
-                                .withExistingParent(ctx.getName(), CrystalClear.asResource("block/illumination_encased_shaft/block"))
+                                // illumination_encased_shaft reuses glass_encased_shaft model (same structure, different textures)
+                                .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/block"))
                                 .texture("casing", CrystalClear.asResource("block/" + casing + "_illumination_casing"))
                                 .texture("opening", getOpening(casing)), true))
                 .item()
                 .model((ctx, prov) -> prov
-                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/illumination_encased_shaft/block"))
+                        // illumination_encased_shaft reuses glass_encased_shaft model (same structure, different textures)
+                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/item"))
                         .texture("casing", CrystalClear.asResource("block/" + casing + "_illumination_casing"))
                         .texture("opening", getOpening(casing)))
                 .build()

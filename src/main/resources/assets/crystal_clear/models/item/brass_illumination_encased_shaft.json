@@ -1,5 +1,5 @@
 {
-  "parent": "crystal_clear:block/glass_encased_shaft/block",
+  "parent": "crystal_clear:block/glass_encased_shaft/item",
   "textures": {
     "casing": "crystal_clear:block/brass_illumination_casing",
     "opening": "create:block/brass_gearbox"
