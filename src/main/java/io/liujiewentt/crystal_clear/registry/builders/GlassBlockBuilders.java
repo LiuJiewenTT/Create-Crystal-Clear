@@ -44,7 +44,7 @@ import static com.simibubi.create.foundation.data.BlockStateGen.axisBlock;
 import static com.simibubi.create.foundation.data.CreateRegistrate.blockModel;
 import static com.simibubi.create.foundation.data.CreateRegistrate.casingConnectivity;
 import static com.simibubi.create.foundation.data.CreateRegistrate.connectedTextures;
-import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
+import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 
 public class GlassBlockBuilders {
 
@@ -64,7 +64,7 @@ public class GlassBlockBuilders {
                 .onRegister(connectedTextures(() -> new EncasedCTBehaviour(ctEntry)))
                 .onRegister(casingConnectivity((block, cc) -> cc.makeCasing(block, ctEntry)))
                 .tag(AllTags.AllBlockTags.CASING.tag)
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .recipe((c, p) ->
                         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
                                 .requires(holder.casing().get())
@@ -92,7 +92,7 @@ public class GlassBlockBuilders {
                 .onRegister(connectedTextures(() -> new EncasedCTBehaviour(ctEntry)))
                 .onRegister(casingConnectivity((block, cc) -> cc.makeCasing(block, ctEntry)))
                 .tag(AllTags.AllBlockTags.CASING.tag)
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .recipe((c, p) ->
                         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
                                 .requires(holder.casing().get())
@@ -123,7 +123,7 @@ public class GlassBlockBuilders {
                 .onRegister(connectedTextures(() -> new GlassEncasedCTBehaviour(ctEntry)))
                 .onRegister(casingConnectivity((block, cc) ->
                         cc.make(block, ctEntry, (state, face) -> true)))
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, state -> prov.models()
                                 .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/block"))
@@ -156,7 +156,7 @@ public class GlassBlockBuilders {
                         cc.make(block, ctEntry, (state, face) ->
                                 !state.getValue(EncasedPipeBlock.FACING_TO_PROPERTY_MAP.get(face)))))
                 .onRegister(blockModel(() -> PipeAttachmentModel::withAO))
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .blockstate((ctx, prov) -> {
                     String casingTexture = "block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing";
                     ModelFile flat = prov.models()
@@ -197,7 +197,7 @@ public class GlassBlockBuilders {
                         cc.make(block, ctEntry, (state, face) ->
                                 !state.getValue(EncasedPipeBlock.FACING_TO_PROPERTY_MAP.get(face)))))
                 .onRegister(blockModel(() -> PipeAttachmentModel::withAO))
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .blockstate((ctx, prov) -> {
                     String casingTexture = "block/" + casing + "_illumination_casing";
                     ModelFile flat = prov.models()
@@ -262,7 +262,7 @@ public class GlassBlockBuilders {
                 .onRegister(casingConnectivity((block, cc) ->
                         cc.make(block, ctEntry, (state, face) -> true)))
                 // Removed onRegister for EncasingRegistry - will be done in FMLCommonSetupEvent
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, state -> prov.models()
                                 // illumination_encased_shaft reuses glass_encased_shaft model (same structure, different textures)
@@ -308,7 +308,7 @@ public class GlassBlockBuilders {
                                         f.getAxis() == state.getValue(GlassEncasedCogwheel.AXIS) &&
                                         !state.getValue(f.getAxisDirection() == Direction.AxisDirection.POSITIVE ?
                                                 GlassEncasedCogwheel.TOP_SHAFT : GlassEncasedCogwheel.BOTTOM_SHAFT))))
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, blockState -> {
                             String suffix = (blockState.getValue(GlassEncasedCogwheel.TOP_SHAFT) ? "_top" : "")
@@ -366,7 +366,7 @@ public class GlassBlockBuilders {
                                         !state.getValue(f.getAxisDirection() == Direction.AxisDirection.POSITIVE ?
                                                 GlassEncasedCogwheel.TOP_SHAFT : GlassEncasedCogwheel.BOTTOM_SHAFT))))
                 // Removed onRegister for EncasingRegistry - will be done in FMLCommonSetupEvent
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .blockstate((ctx, prov) ->
                         axisBlock(ctx, prov, blockState -> {
                             String suffix = (blockState.getValue(GlassEncasedCogwheel.TOP_SHAFT) ? "_top" : "")
@@ -408,7 +408,7 @@ public class GlassBlockBuilders {
                 .properties(p -> p.sound(SoundType.COPPER).noOcclusion())
                 .addLayer(() -> RenderType::cutout)
                 .onRegister(connectedTextures(() -> new MetalScaffoldingCTBehaviour(side, innerSide, mainShift)))
-                .transform(pickaxeOnly())
+                .transform(axeOrPickaxe())
                 .tag(BlockTags.CLIMBABLE)
                 .blockstate((c, p) -> p.getVariantBuilder(c.get())
                         .forAllStatesExcept(s -> {
