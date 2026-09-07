@@ -3,6 +3,7 @@ package io.liujiewentt.crystal_clear.registry.builders;
 import io.liujiewentt.crystal_clear.CrystalClear;
 import io.liujiewentt.crystal_clear.block.glass.*;
 import io.liujiewentt.crystal_clear.block.illumination.*;
+import io.liujiewentt.crystal_clear.registry.CPBlocks;
 import io.liujiewentt.crystal_clear.registry.CPSpriteShifts;
 import io.liujiewentt.crystal_clear.util.CasingHolder;
 import com.simibubi.create.AllBlocks;
@@ -95,7 +96,7 @@ public class GlassBlockBuilders {
                 .transform(axeOrPickaxe())
                 .recipe((c, p) ->
                         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, c.get())
-                                .requires(holder.casing().get())
+                                .requires(CPBlocks.CLEAR_GLASS_CASINGS.getCasing(name))
                                 .requires(Items.GLOWSTONE_DUST, 4)
                                 .unlockedBy("has_casing", RegistrateRecipeProvider.has(AllTags.AllItemTags.CASING.tag))
                                 .save(p, CrystalClear.asResource("crafting/illumination_casing/" + c.getName())))
