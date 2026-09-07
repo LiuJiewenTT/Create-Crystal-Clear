@@ -131,7 +131,7 @@ public class GlassBlockBuilders {
                                 .texture("opening", getOpening(casing)), true))
                 .item()
                 .model((ctx, prov) -> prov
-                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/block"))
+                        .withExistingParent(ctx.getName(), CrystalClear.asResource("block/glass_encased_shaft/item"))
                         .texture("casing", CrystalClear.asResource("block/" + casing + (clear ? "_clear_glass" : "_glass") + "_casing"))
                         .texture("opening", getOpening(casing)))
                 .build()
