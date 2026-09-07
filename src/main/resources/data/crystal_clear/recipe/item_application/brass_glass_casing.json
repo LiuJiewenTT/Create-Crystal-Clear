@@ -2,7 +2,7 @@
   "type": "create:item_application",
   "ingredients": [
     {
-      "tag": "c:glass_blocks"
+      "item": "create:framed_glass"
     },
     {
       "tag": "c:ingots/brass"
